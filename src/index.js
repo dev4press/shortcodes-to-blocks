@@ -1,0 +1,1 @@
+import './press-notice/index.js';

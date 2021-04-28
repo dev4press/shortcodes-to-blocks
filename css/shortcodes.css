@@ -1,0 +1,25 @@
+:root {
+    --press-notice-color-background: #FFE2E2;
+    --press-notice-color-border: #EA0000;
+    --press-notice-color-text: #900;
+    --press-notice-font-size: 16px;
+    --press-notice-line-height: 1.5;
+}
+
+.press-notice-wrapper {
+    background: var(--press-notice-color-background);
+    border: 1px solid var(--press-notice-color-border);
+    color: var(--press-notice-color-text);
+    font-size: var(--press-notice-font-size);
+    line-height: var(--press-notice-line-height);
+    padding: 1em;
+    margin: 1em 0;
+}
+
+.press-notice-wrapper .dashicons {
+    vertical-align: text-bottom;
+    margin: 0 .5em 0 0;
+    width: var(--press-notice-font-size);
+    height: var(--press-notice-font-size);
+    font-size: var(--press-notice-font-size);
+}
