@@ -8,8 +8,8 @@ import {__} from "@wordpress/i18n";
 registerBlockType('shortcodes-to-blocks/press-notice', {
     apiVersion: 2,
     name: 'shortcodes-to-blocks/press-notice',
-    title: __('Press Notice', 'shortcodes-to-blocks'),
-    description: __('Display simple notice.', 'shortcodes-to-blocks'),
+    title: __("Press Notice", "shortcodes-to-blocks"),
+    description: __("Display simple notice.", "shortcodes-to-blocks"),
     icon: 'warning',
     attributes: {
         'text': {
@@ -62,22 +62,22 @@ registerBlockType('shortcodes-to-blocks/press-notice', {
     edit: ({attributes, setAttributes}) => {
         const fontSizes = [
             {
-                name: __('Tiny', 'shortcodes-to-blocks'),
+                name: __("Tiny", "shortcodes-to-blocks"),
                 slug: 'small',
                 size: 10,
             },
             {
-                name: __('Small', 'shortcodes-to-blocks'),
+                name: __("Small", "shortcodes-to-blocks"),
                 slug: 'small',
                 size: 14,
             },
             {
-                name: __('Normal', 'shortcodes-to-blocks'),
+                name: __("Normal", "shortcodes-to-blocks"),
                 slug: 'normal',
                 size: 16,
             },
             {
-                name: __('Big', 'shortcodes-to-blocks'),
+                name: __("Big", "shortcodes-to-blocks"),
                 slug: 'big',
                 size: 20,
             }
@@ -90,14 +90,14 @@ registerBlockType('shortcodes-to-blocks/press-notice', {
                     attributes={attributes}
                 />
                 <InspectorControls key="settings">
-                    <PanelBody title={__('Notice', 'shortcodes-to-blocks')}>
+                    <PanelBody title={__("Notice", "shortcodes-to-blocks")}>
                         <TextControl
-                            label={__('Notice Text', 'shortcodes-to-blocks')}
+                            label={__("Notice Text", "shortcodes-to-blocks")}
                             value={attributes.text}
                             onChange={(value) => setAttributes({text: value})}
                         />
                         <SelectControl
-                            label={__('Notice Icon', 'shortcodes-to-blocks')}
+                            label={__("Notice Icon", "shortcodes-to-blocks")}
                             value={attributes.icon}
                             options={[
                                 {label: __("Warning"), value: 'warning'},
@@ -109,40 +109,40 @@ registerBlockType('shortcodes-to-blocks/press-notice', {
                             onChange={(value) => setAttributes({icon: value})}
                         />
                     </PanelBody>
-                    <PanelBody title={__('Typography', 'shortcodes-to-blocks')}>
+                    <PanelBody title={__("Typography", "shortcodes-to-blocks")}>
                         <FontSizePicker
-                            label={__('Font Size', 'shortcodes-to-blocks')}
+                            label={__("Font Size", "shortcodes-to-blocks")}
                             value={attributes.varFontSize}
                             onChange={(value) => setAttributes({varFontSize: value})}
                             fallBackFontSize={16}
                             fontSizes={fontSizes}
                         />
                         <LineHeightControl
-                            label={__('Line Height', 'shortcodes-to-blocks')}
+                            label={__("Line Height", "shortcodes-to-blocks")}
                             value={attributes.varLineHeight}
                             onChange={(value) => setAttributes({varLineHeight: value})}
                         />
                     </PanelBody>
-                    <PanelBody title={__('Colors', 'shortcodes-to-blocks')}>
+                    <PanelBody title={__("Colors", "shortcodes-to-blocks")}>
                         <ColorPaletteControl
-                            label={__('Background', 'shortcodes-to-blocks')}
+                            label={__("Background", "shortcodes-to-blocks")}
                             value={attributes.varColorBackground}
                             onChange={(value) => setAttributes({varColorBackground: value})}
                         />
                         <ColorPaletteControl
-                            label={__('Text', 'shortcodes-to-blocks')}
+                            label={__("Text", "shortcodes-to-blocks")}
                             value={attributes.varColorText}
                             onChange={(value) => setAttributes({varColorText: value})}
                         />
                         <ColorPaletteControl
-                            label={__('Border', 'shortcodes-to-blocks')}
+                            label={__("Border", "shortcodes-to-blocks")}
                             value={attributes.varColorBorder}
                             onChange={(value) => setAttributes({varColorBorder: value})}
                         />
                     </PanelBody>
-                    <PanelBody title={__('Advanced', 'shortcodes-to-blocks')}>
+                    <PanelBody title={__("Advanced", "shortcodes-to-blocks")}>
                         <TextControl
-                            label={__("Additional CSS Class", "archivespress")}
+                            label={__("Additional CSS Class", "shortcodes-to-blocks")}
                             value={attributes.class}
                             onChange={(value) => setAttributes({class: value})}
                         />

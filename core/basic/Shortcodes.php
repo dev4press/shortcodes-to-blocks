@@ -29,7 +29,7 @@ class Shortcodes {
 
 	public function register() {
 		add_shortcode( 'press-notice', array( $this, 'shortcode_notice' ) );
-		//add_shortcode('press-notice', array($this, 'shortcode_notice'));
+		add_shortcode( 'press-meta', array( $this, 'shortcode_meta' ) );
 	}
 
 	public function shortcode_notice( $atts = array() ) : string {
@@ -70,7 +70,95 @@ class Shortcodes {
 		return $render;
 	}
 
-	protected function styling_notice( $id, $args = array() ) : string {
+	public function shortcode_meta( $atts = array() ) : string {
+		$defaults = array(
+			'_source'           => 'shortcode',
+			'title'             => 'Meta',
+			'class'             => '',
+			'show-site-admin'   => true,
+			'show-profile-edit' => true,
+			'show-log-in'       => true,
+			'show-log-out'      => true,
+			'show-register'     => true,
+			'show-home-page'    => true,
+			'show-rss-posts'    => true,
+			'show-rss-comments' => true
+		);
+
+		$atts = shortcode_atts( $defaults, $atts );
+
+		$lists = array(
+			array(),
+			array()
+		);
+
+		if ( is_user_logged_in() ) {
+			if ( $atts['show-site-admin'] ) {
+				$lists[0][] = '<a href="' . admin_url() . '">' . __( "Site Admin", "shortcodes-to-blocks" ) . '</a>';
+			}
+
+			if ( $atts['show-profile-edit'] ) {
+				$lists[0][] = '<a href="' . admin_url( 'profile.php' ) . '">' . __( "Profile", "shortcodes-to-blocks" ) . '</a>';
+			}
+
+			if ( $atts['show-log-out'] ) {
+				$lists[0][] = '<a href="' . wp_logout_url() . '">' . __( "Log Out", "shortcodes-to-blocks" ) . '</a>';
+			}
+		} else {
+			if ( $atts['show-log-in'] ) {
+				$lists[0][] = '<a href="' . wp_login_url() . '">' . __( "Log In", "shortcodes-to-blocks" ) . '</a>';
+			}
+
+			if ( $atts['show-register'] ) {
+				$lists[0][] = '<a href="' . wp_registration_url() . '">' . __( "Register", "shortcodes-to-blocks" ) . '</a>';
+			}
+		}
+
+		if ( $atts['show-home-page'] ) {
+			$lists[1][] = '<a href="' . site_url() . '">' . __( "Home Page", "shortcodes-to-blocks" ) . '</a>';
+		}
+
+		if ( $atts['show-rss-posts'] ) {
+			$lists[1][] = '<a href="' . get_bloginfo( 'rss2_url' ) . '">' . __( "Entries <abbr title='Really Simple Syndication'>RSS</abbr>", "shortcodes-to-blocks" ) . '</a>';
+		}
+
+		if ( $atts['show-rss-comments'] ) {
+			$lists[1][] = '<a href="' . get_bloginfo( 'comments_rss2_url' ) . '">' . __( "Comments <abbr title='Really Simple Syndication'>RSS</abbr>", "shortcodes-to-blocks" ) . '</a>';
+		}
+
+		$classes = array(
+			'press-meta-wrapper'
+		);
+
+		if ( ! empty( $atts['class'] ) ) {
+			$classes[] = $atts['class'];
+		}
+
+		$blocks = array();
+
+		if ( ! empty( $lists[0] ) ) {
+			$blocks[] = '<div class="press-meta-links"><span>' . join( '</span><span>', $lists[0] ) . '</span></div>';
+		}
+
+		if ( ! empty( $lists[1] ) ) {
+			$blocks[] = '<div class="press-meta-links"><span>' . join( '</span><span>', $lists[1] ) . '</span></div>';
+		}
+
+		$id = 'press-meta-block-' . ( ++ $this->id );
+
+		$render = '<div class="wp-' . $atts['_source'] . '-press-notice">';
+		$render .= '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
+		$render .= '<h4>' . $atts['title'] . '</h4>';
+		$render .= join( '<hr/>', $blocks );
+		$render .= '</div>';
+		$render .= '</div>';
+
+		wp_enqueue_style( 'shortcodes-to-blocks' );
+
+		return $render;
+	}
+
+	private function styling_notice( $id, $args = array() ) : string {
 		$vars      = array();
 		$supported = array(
 			'color-background',

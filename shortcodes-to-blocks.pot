@@ -1,0 +1,232 @@
+# Copyright (C) 2021 Milan Petrovic
+# This file is distributed under the same license as the Shortcodes To Block plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Shortcodes To Block 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/shortcodes-to-blocks\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-04-29T19:26:04+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: shortcodes-to-blocks\n"
+
+#. Plugin Name of the plugin
+msgid "Shortcodes To Block"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/dev4press/shortcodes-to-blocks"
+msgstr ""
+
+#. Description of the plugin
+msgid "Example plugin for adding Block Editor blocks to replace shortcodes, and add settings for shortcodes attributes."
+msgstr ""
+
+#. Author of the plugin
+msgid "Milan Petrovic"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.dev4press.com/"
+msgstr ""
+
+#: core/basic/Blocks.php:50
+msgid "ShortcodesBlocks"
+msgstr ""
+
+#: core/basic/Blocks.php:93
+#: build/index.js:1
+#: src/press-notice/index.js:11
+msgid "Press Notice"
+msgstr ""
+
+#: core/basic/Blocks.php:94
+#: core/basic/Blocks.php:161
+#: build/index.js:1
+#: src/press-notice/index.js:12
+msgid "Display simple notice."
+msgstr ""
+
+#: core/basic/Blocks.php:160
+#: build/index.js:1
+#: src/press-meta/index.js:11
+msgid "Press Meta"
+msgstr ""
+
+#: core/basic/Shortcodes.php:97
+msgid "Site Admin"
+msgstr ""
+
+#: core/basic/Shortcodes.php:101
+msgid "Profile"
+msgstr ""
+
+#: core/basic/Shortcodes.php:105
+msgid "Log Out"
+msgstr ""
+
+#: core/basic/Shortcodes.php:109
+msgid "Log In"
+msgstr ""
+
+#: core/basic/Shortcodes.php:113
+msgid "Register"
+msgstr ""
+
+#: core/basic/Shortcodes.php:118
+msgid "Home Page"
+msgstr ""
+
+#: core/basic/Shortcodes.php:122
+msgid "Entries <abbr title='Really Simple Syndication'>RSS</abbr>"
+msgstr ""
+
+#: core/basic/Shortcodes.php:126
+msgid "Comments <abbr title='Really Simple Syndication'>RSS</abbr>"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:65
+msgid "Tiny"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:70
+msgid "Small"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:75
+msgid "Normal"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:80
+msgid "Big"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:93
+msgid "Notice"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:95
+msgid "Notice Text"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:100
+msgid "Notice Icon"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:112
+msgid "Typography"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:114
+msgid "Font Size"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:121
+msgid "Line Height"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:126
+msgid "Colors"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:128
+msgid "Background"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:133
+msgid "Text"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-notice/index.js:138
+msgid "Border"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:116
+#: src/press-notice/index.js:143
+msgid "Advanced"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:118
+#: src/press-notice/index.js:145
+msgid "Additional CSS Class"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:12
+msgid "Display simple meta links."
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:67
+msgid "Display"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:69
+msgid "Title"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:74
+msgid "Links"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:76
+msgid "Show Site Admin"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:81
+msgid "Show Profile Edit"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:86
+msgid "Show Log In"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:91
+msgid "Show Log Out"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:96
+msgid "Show Register"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:101
+msgid "Show Home Page"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:106
+msgid "Show RSS Posts"
+msgstr ""
+
+#: build/index.js:1
+#: src/press-meta/index.js:111
+msgid "Show RSS Comments"
+msgstr ""

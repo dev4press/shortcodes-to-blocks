@@ -23,3 +23,15 @@
     height: var(--press-notice-font-size);
     font-size: var(--press-notice-font-size);
 }
+
+.press-meta-wrapper .press-meta-links span {
+    display: block;
+}
+
+.press-meta-wrapper hr {
+    margin: .5em 0;
+    padding: 0;
+    border: 0;
+    height: 2px;
+    background-color: #EEE;
+}
