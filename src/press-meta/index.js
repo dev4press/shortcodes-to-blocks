@@ -11,6 +11,9 @@ registerBlockType('shortcodes-to-blocks/press-meta', {
     title: __('Press Meta', 'shortcodes-to-blocks'),
     description: __('Display simple meta links.', 'shortcodes-to-blocks'),
     icon: 'menu-alt',
+    supports: {
+        customClassName: false,
+    },
     attributes: {
         'title': {
             'type': 'string',
@@ -52,9 +55,6 @@ registerBlockType('shortcodes-to-blocks/press-meta', {
             'type': 'boolean',
             'default': true
         }
-    },
-    supports: {
-        customClassName: false,
     },
     edit: ({attributes, setAttributes}) => {
         return (

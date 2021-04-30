@@ -30,8 +30,8 @@ class Blocks {
 	 * Main Blocks class entry point, add new block category and register blocks
 	 */
 	private function run() {
-		add_filter( 'block_categories', array( $this, 'categories' ) );
 		add_action( 'init', array( $this, 'blocks' ), 30 );
+		add_filter( 'block_categories', array( $this, 'categories' ) );
 	}
 
 	/**
@@ -41,7 +41,7 @@ class Blocks {
 	 *
 	 * @return array
 	 */
-	public function categories( $categories ) : array {
+	public function categories( array $categories ) : array {
 		return array_merge(
 			$categories,
 			array(
@@ -86,62 +86,62 @@ class Blocks {
 	 * Value for render_callback HAS to be listed here only, it can't be in the JavaScript block code.
 	 * Values for editor_script and editor_style also have to be listed here only, not in JavaScript block code.
 	 */
-	private function _register_notice_block() {
-		register_block_type( 'shortcodes-to-blocks/press-notice', array(
-			'apiVersion'      => 2,
-			'name'            => 'shortcodes-to-blocks/press-notice',
-			'title'           => __( 'Press Notice', 'shortcodes-to-blocks' ),
-			'description'     => __( 'Display simple notice.', 'shortcodes-to-blocks' ),
-			'category'        => 'shortcodesblocks',
-			'icon'            => 'warning',
-			'render_callback' => array( $this, 'callback_notice' ),
-			'attributes'      => array(
-				'text'               => array(
-					'type'    => 'string',
-					'default' => 'This is just a notice.'
-				),
-				'icon'               => array(
-					'type'    => 'string',
-					'enum'    => array(
-						'warning',
-						'info',
-						'yes-alt',
-						'star-filled',
-						'flag'
-					),
-					'default' => 'warning'
-				),
-				'class'              => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varFontSize'        => array(
-					'type'    => 'integer',
-					'default' => 16,
-					'minimal' => 1
-				),
-				'varLineHeight'      => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varColorBackground' => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varColorText'       => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varColorBorder'     => array(
-					'type'    => 'string',
-					'default' => ''
-				)
+private function _register_notice_block() {
+	register_block_type( 'shortcodes-to-blocks/press-notice', array(
+		'apiVersion'      => 2,
+		'name'            => 'shortcodes-to-blocks/press-notice',
+		'title'           => __( 'Press Notice', 'shortcodes-to-blocks' ),
+		'description'     => __( 'Display simple notice.', 'shortcodes-to-blocks' ),
+		'category'        => 'shortcodesblocks',
+		'icon'            => 'warning',
+		'render_callback' => array( $this, 'callback_notice' ),
+		'attributes'      => array(
+			'text'               => array(
+				'type'    => 'string',
+				'default' => 'This is just a notice.'
 			),
-			'textdomain'      => 'shortcodes-to-blocks',
-			'editor_script'   => 'shortcodes-to-blocks-editor',
-			'editor_style'    => 'shortcodes-to-blocks'
-		) );
-	}
+			'icon'               => array(
+				'type'    => 'string',
+				'enum'    => array(
+					'warning',
+					'info',
+					'yes-alt',
+					'star-filled',
+					'flag'
+				),
+				'default' => 'warning'
+			),
+			'class'              => array(
+				'type'    => 'string',
+				'default' => ''
+			),
+			'varFontSize'        => array(
+				'type'    => 'integer',
+				'default' => 16,
+				'minimal' => 1
+			),
+			'varLineHeight'      => array(
+				'type'    => 'string',
+				'default' => ''
+			),
+			'varColorBackground' => array(
+				'type'    => 'string',
+				'default' => ''
+			),
+			'varColorText'       => array(
+				'type'    => 'string',
+				'default' => ''
+			),
+			'varColorBorder'     => array(
+				'type'    => 'string',
+				'default' => ''
+			)
+		),
+		'textdomain'      => 'shortcodes-to-blocks',
+		'editor_script'   => 'shortcodes-to-blocks-editor',
+		'editor_style'    => 'shortcodes-to-blocks'
+	) );
+}
 
 	/**
 	 * Register block for 'press-meta'.

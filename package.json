@@ -1,5 +1,5 @@
 {
-	"name": "shortcodesblocks",
+	"name": "shortcodes-to-blocks",
 	"version": "1.0.0",
 	"description": "Example plugin for adding Block Editor blocks to replace shortcodes, and add settings for shortcodes attributes.",
 	"author": "Milan Petrovic",

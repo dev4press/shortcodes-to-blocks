@@ -11,6 +11,9 @@ registerBlockType('shortcodes-to-blocks/press-notice', {
     title: __('Press Notice', 'shortcodes-to-blocks'),
     description: __('Display simple notice.', 'shortcodes-to-blocks'),
     icon: 'warning',
+    supports: {
+        customClassName: false,
+    },
     attributes: {
         'text': {
             'type': 'string',
@@ -55,9 +58,6 @@ registerBlockType('shortcodes-to-blocks/press-notice', {
             'format': 'hex-color',
             'default': ''
         }
-    },
-    supports: {
-        customClassName: false,
     },
     edit: ({attributes, setAttributes}) => {
         const fontSizes = [
