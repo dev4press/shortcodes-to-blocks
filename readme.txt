@@ -2,8 +2,8 @@
 Contributors: GDragoN
 Donate link: https://github.com/dev4press/shortcodes-to-blocks
 Tags: dev4press, blocks, shortcodes
-Stable tag: 2.0
-Requires at least: 5.7
+Stable tag: 1.0
+Requires at least: 5.3
 Tested up to: 5.8
 Requires PHP: 7.0
 License: GPLv3 or later
@@ -16,7 +16,7 @@ Example plugin for adding Block Editor blocks to replace shortcodes, and add set
 
 More information:
 * Project on GitHub.com: [ShortCodes to Blocks](https://github.com/dev4press/shortcodes-to-blocks)
-* Tutorial on Millan.dev: [Convert shortcodes into blocks](https://millan.dev/2021/04/30/convert-shortcodes-into-blocks/)
+* Tutorial on Millan.dev: [Convert shortcodes into blocks](https://millan.dev/2021/05/02/tutorial-convert-shortcodes-into-blocks/)
 
 == Installation ==
 = General Requirements =
@@ -43,5 +43,5 @@ All three blocks registered by this plugin are listed under 'ShortcodesBlocks' b
 The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
-= Version: 1.0 / april 22 2021 =
+= Version: 1.0 / may 2 2021 =
 * New: first official version

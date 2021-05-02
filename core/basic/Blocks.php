@@ -86,62 +86,62 @@ class Blocks {
 	 * Value for render_callback HAS to be listed here only, it can't be in the JavaScript block code.
 	 * Values for editor_script and editor_style also have to be listed here only, not in JavaScript block code.
 	 */
-private function _register_notice_block() {
-	register_block_type( 'shortcodes-to-blocks/press-notice', array(
-		'apiVersion'      => 2,
-		'name'            => 'shortcodes-to-blocks/press-notice',
-		'title'           => __( 'Press Notice', 'shortcodes-to-blocks' ),
-		'description'     => __( 'Display simple notice.', 'shortcodes-to-blocks' ),
-		'category'        => 'shortcodesblocks',
-		'icon'            => 'warning',
-		'render_callback' => array( $this, 'callback_notice' ),
-		'attributes'      => array(
-			'text'               => array(
-				'type'    => 'string',
-				'default' => 'This is just a notice.'
-			),
-			'icon'               => array(
-				'type'    => 'string',
-				'enum'    => array(
-					'warning',
-					'info',
-					'yes-alt',
-					'star-filled',
-					'flag'
+	private function _register_notice_block() {
+		register_block_type( 'shortcodes-to-blocks/press-notice', array(
+			'apiVersion'      => 2,
+			'name'            => 'shortcodes-to-blocks/press-notice',
+			'title'           => __( 'Press Notice', 'shortcodes-to-blocks' ),
+			'description'     => __( 'Display simple notice.', 'shortcodes-to-blocks' ),
+			'category'        => 'shortcodesblocks',
+			'icon'            => 'warning',
+			'render_callback' => array( $this, 'callback_notice' ),
+			'attributes'      => array(
+				'text'               => array(
+					'type'    => 'string',
+					'default' => 'This is just a notice.'
 				),
-				'default' => 'warning'
+				'icon'               => array(
+					'type'    => 'string',
+					'enum'    => array(
+						'warning',
+						'info',
+						'yes-alt',
+						'star-filled',
+						'flag'
+					),
+					'default' => 'warning'
+				),
+				'class'              => array(
+					'type'    => 'string',
+					'default' => ''
+				),
+				'varFontSize'        => array(
+					'type'    => 'integer',
+					'default' => 16,
+					'minimal' => 1
+				),
+				'varLineHeight'      => array(
+					'type'    => 'string',
+					'default' => ''
+				),
+				'varColorBackground' => array(
+					'type'    => 'string',
+					'default' => ''
+				),
+				'varColorText'       => array(
+					'type'    => 'string',
+					'default' => ''
+				),
+				'varColorBorder'     => array(
+					'type'    => 'string',
+					'default' => ''
+				)
 			),
-			'class'              => array(
-				'type'    => 'string',
-				'default' => ''
-			),
-			'varFontSize'        => array(
-				'type'    => 'integer',
-				'default' => 16,
-				'minimal' => 1
-			),
-			'varLineHeight'      => array(
-				'type'    => 'string',
-				'default' => ''
-			),
-			'varColorBackground' => array(
-				'type'    => 'string',
-				'default' => ''
-			),
-			'varColorText'       => array(
-				'type'    => 'string',
-				'default' => ''
-			),
-			'varColorBorder'     => array(
-				'type'    => 'string',
-				'default' => ''
-			)
-		),
-		'textdomain'      => 'shortcodes-to-blocks',
-		'editor_script'   => 'shortcodes-to-blocks-editor',
-		'editor_style'    => 'shortcodes-to-blocks'
-	) );
-}
+			'textdomain'      => 'shortcodes-to-blocks',
+			'editor_script'   => 'shortcodes-to-blocks-editor',
+			'editor_style'    => 'shortcodes-to-blocks'
+		) );
+	}
 
 	/**
 	 * Register block for 'press-meta'.
@@ -218,11 +218,11 @@ private function _register_notice_block() {
 	 *
 	 * Also, font size value is missing the 'px', it has only value when set in the block attribute.
 	 *
-	 * @param string[] $attributes
+	 * @param array $attributes
 	 *
 	 * @return string[]
 	 */
-	private function normalize_attributes( $attributes ) : array {
+	private function normalize_attributes( array $attributes ) : array {
 		$output = array(
 			'_source' => 'block'
 		);
@@ -263,13 +263,21 @@ private function _register_notice_block() {
 	 *
 	 * @return string
 	 */
-	public function callback_notice( $attributes ) : string {
+	public function callback_notice( array $attributes ) : string {
 		$atts = $this->normalize_attributes( $attributes );
 
 		return Shortcodes::instance()->shortcode_notice( $atts );
 	}
 
-	public function callback_meta( $attributes ) : string {
+	/**
+	 * Callback method for the 'press-meta' block as defined for this block. The method is called by the
+	 * Block Editor Server Side Rendering component, and it has all the block attributes as parameter.
+	 *
+	 * @param array $attributes
+	 *
+	 * @return string
+	 */
+	public function callback_meta( array $attributes ) : string {
 		$atts = $this->normalize_attributes( $attributes );
 
 		return Shortcodes::instance()->shortcode_meta( $atts );
